@@ -55,21 +55,21 @@
 			// 自动轮播
 			pic();
 			function pic(){
-                var p = setInterval(()=>{
-                	index++;
-                	if (index>=imgNum) {
-                		index = 0;
-                	}
-                	selectimg(index);
-                },4000);
+                	var p = setInterval(()=>{
+				index++;
+				if (index>=imgNum) {
+					index = 0;
+				}
+				selectimg(index);
+			},4000);
 			}
-            //按钮点击事件
-            $(".Dots a").each(function(index){
-            	$(this).click(function(){
-            		$(".box div").eq($(this).index()).addClass("active").siblings("div").removeClass("active");
-            		$(".Dots a").eq($(this).index()).addClass("active").siblings("a").removeClass("active");
-            	})
-            })
+           		 //按钮点击事件
+		        $(".Dots a").each(function(index){
+			   $(this).click(function(){
+				$(".box div").eq($(this).index()).addClass("active").siblings("div").removeClass("active");
+				$(".Dots a").eq($(this).index()).addClass("active").siblings("a").removeClass("active");
+			    })
+		         })
 		</script>
 	</body>
 </html>
