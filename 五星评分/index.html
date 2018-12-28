@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>五星评分</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .star{width:500px;border:1px solid #ccc;padding:20px;margin:50px auto}
+        .star .s-txt{float:left}
+        .star .s-xxs{display:inline-block}
+        .star .s-xx{float:left;color:#e3e3e3;padding-right:4px;cursor:pointer}
+        .star .s-haoping{color:#f13a3a;border:1px solid #f13a3a;padding:2px 4px;font-size:12px;vertical-align:super;position:relative;display:none}
+        .star .s-haoping .s-hp-triangle0{border-width:4px;position:absolute;top:5px;left:-8px;border-color:transparent #f13a3a transparent transparent;border-style:dashed solid dashed dashed}
+        .star .s-haoping .s-hp-triangle1{border-width:4px;position:absolute;top:5px;left:-7px;border-color:transparent #f8f8f8 transparent transparent;border-style:dashed solid dashed dashed}
+        .star .color-f13a3a{color:#f13a3a}
+    </style>
+</head>
+<body>
+    <div class="star">
+        <span class="s-txt">产品评星：</span>
+        <span class="s-xxs">
+            <span class="iconfont s-xx">☆</span>
+            <span class="iconfont s-xx">☆</span>
+            <span class="iconfont s-xx">☆</span>
+            <span class="iconfont s-xx">☆</span>
+            <span class="iconfont s-xx">☆</span>
+        </span>
+        <span class="s-haoping">
+            <em class="s-hp-triangle0">
+            </em><em class="s-hp-triangle1">
+            </em><span class="s-hp-txt">5分好评</span>
+        </span>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript">
+        var isClick = false;
+        var arr = ["1分差评","2分中评","3分中评","4分好评","4分好评"];
+        var clickind = -1;
+        $(".s-xx").on('click',function(){
+            isClick = true;
+            clickind = $(this).index();
+        });
+        $('.s-xx').hover(function(){
+            var ind = $(this).index();
+            $(".s-xx").removeClass('color-color-f13a3a');
+            for (var i = 0; i <= ind; i++) {
+                $(".s-xx").eq(i).addClass("color-f13a3a");
+                $(".s-haoping").find(".s-hp-txt").text(arr[i]).end().show();
+                
+            }
+        },function(){
+            if (!isClick) {
+                $(".s-xx").removeClass("color-f13a3a");
+                $(".s-haoping").hide();
+            }else{
+                $(".s-xx").removeClass("color-f13a3a");
+                for(var i=0;i<=clickind;i++){
+                    $(".s-xx").eq(i).addClass("color-f13a3a");
+                    $(".s-haoping").find(".s-hp-txt").text(arr[i]).end().show()
+                }
+            }
+        })
+    </script>
+</body>
+</html>
