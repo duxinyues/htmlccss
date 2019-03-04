@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			#canvas{border: 1px solid red}
+		</style>
+	</head>
+	<body>
+
+		<canvas id="canvas" width="500" height="300" ></canvas>
+		<script src="./tools.js"></script>
+		<script>
+			function $(id){
+				return document.getElementById(id);
+			}
+			window.onload = function(){
+				var canvas = $("canvas");
+				var ctx = canvas.getContext("2d");
+				
+				drawBall(canvas.width/2,canvas.height/2)
+				var x = 100;
+				var y = 75;
+				//获取按键方向
+				var key = tools.getKey();
+				//添加鼠标按下的事件
+				window.addEventListener("keydown",function(e){
+					//清除Canvas 重新绘制圆形
+					ctx.clearRect(0,0,canvas.width,canvas.height);
+					//根据key.drection的值，判断小球的移动方向
+					switch (key.direction) {
+						case "up":y -=2;
+						    drawBall(x,y);
+							break;
+						case "down":y +=2;
+							drawBall(x,y);
+							break;
+						case "left":x -= 2;
+							drawBall(x,y);
+							break;
+						case "right": x += 2;
+							drawBall(x,y);
+							break;
+					}
+				},)
+
+
+				//定义一个小球
+				function drawBall(x,y){
+					ctx.beginPath();
+					ctx.arc(x,y,20,0,360*Math.PI/180,true);
+					ctx.closePath();
+
+					ctx.fillStyle = "red";
+					ctx.fill();
+				}
+			}
+
+		</script>
+	</body>
+</html>
