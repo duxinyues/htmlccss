@@ -1,0 +1,58 @@
+<!--
+ * @FileName: 
+ * @Author: 1638877065@qq.com
+ * @Date: 2021-07-04 17:11:27
+ * @LastEditors: 1638877065@qq.com
+ * @LastEditTime: 2021-07-04 17:58:16
+ * @FilePath: \htmlccss\initial.html
+ * @Description: css的两个特殊值应用
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css特殊值inherit和initial</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .container {
+            width: 300px;
+            border: 1px solid blue;
+            height: 400px;
+            overflow: hidden;
+        }
+
+        .container .test {
+            border: 1px solid green;
+            height: inherit;
+        }
+
+        div p+p {
+            border: 1px solid red;
+            margin-top: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="test">
+            tianijedfb
+        </div>
+        <p>1</p>
+        <p>2</p>
+        <p>3</p>
+        <p>4</p>
+        <p>5</p>
+    </div>
+</body>
+
+</html>
