@@ -1,0 +1,103 @@
+<!--
+ * @Author: yongyuan253015@gmail.com
+ * @Date: 2021-10-04 19:00:41
+ * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2021-10-06 17:37:39
+ * @Description: 浮动布局
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>浮动布局——float</title>
+    <style>
+        :root {
+            box-sizing: border-box;
+        }
+
+        *,
+        ::after,
+        ::before {
+            box-sizing: inherit;
+        }
+
+        body {
+            background-color: #eee;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        body *+* {
+            margin-top: 1.5em;
+        }
+
+        main {
+            background-color: #fff;
+            padding: 0 1.5em;
+            border-radius: .5em;
+            float: left;
+            border: 1px solid red;
+        }
+
+        main::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        .content {
+            border: 1px solid red;
+            width: 500px;
+
+        }
+
+        .content div {
+            width: 100px;
+            height: 50px;
+
+        }
+
+        .content div:nth-child(1) {
+            border: 1px solid blue;
+
+        }
+
+        .content div:nth-child(2) {
+            border: 1px solid pink;
+            float: left;
+        }
+
+        .content div:nth-child(2)::after {
+            content: "";
+            clear: both;
+            display: block;
+        }
+
+        .content div:nth-child(3) {
+            border: 1px solid yellowgreen;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+    </main>
+    
+    这个是辅导费不放过发货那么能吃v吧
+    <div style="clear: both;"></div>
+
+    <div class="content">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</body>
+
+</html>
