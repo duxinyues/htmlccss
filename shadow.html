@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+        }
+
+        div {
+            width: 30vmin;
+            height: 30vmin;
+            background: #e9ecef;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            margin-right: 30px;
+        }
+
+        .outset {
+            box-shadow: 7px 7px 12px rgba(0, 0, 0, .4),
+                -7px -7px 12px rgba(255, 255, 255, .9);
+        }
+
+        .inset {
+            box-shadow: inset -7px -7px 12px rgba(255, 255, 255, .9),
+                inset 7px 7px 12px rgba(0, 0, 0, .4);
+        }
+
+        .shodow {
+            position: relative;
+        }
+
+        .shodow::before,
+        .shodow::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+        }
+
+        .shodow::before {
+            transform-origin: 0 50%;
+            transform: translate(100%, 0) skewY(45deg) scaleX(0.6);
+            background: linear-gradient(90deg, rgba(0, 0, 0, .3), transparent);
+            animation: shadowMoveY 5s infinite linear alternate;
+        }
+        .shodow::after {
+            transform-origin: 0 0;
+            transform: translate(0, 100%) skewX(45deg) scaleY(0.6);
+            background: linear-gradient(180deg, rgba(0, 0, 0, .3), transparent);
+            animation: shadowMoveX 5s infinite linear alternate;
+        }
+        @keyframes shadowMoveX {
+            to {
+                transform: translate(0%, 100%) skewX(50deg) scaleY(.6);
+            }
+        }
+
+        @keyframes shadowMoveY {
+            to {
+                transform: translate(100%, 0) skewY(40deg) scaleX(.6);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="outset"></div>
+    <div class="inset"></div>
+    <div class="shodow"></div>
+</body>
+
+</html>
