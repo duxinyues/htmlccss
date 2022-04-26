@@ -15,12 +15,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        :root {
+            --fontColor: red
+        }
+
         #box {
             border: 10px solid red;
             width: 400px;
             height: 300px;
             padding: 20px;
             box-sizing: border-box;
+            color: var(--fontColor);
         }
     </style>
 </head>
@@ -30,6 +35,10 @@
         box-sizing 属性的默认值是content-box，指定宽高为内容宽高。
         box-sizing属性设置为border-box，height和width就会包含盒子的内容、内边距和边框的总和，这样UI图纸所设计的宽高就不用减去对应元素的内边距和边框了。
     </div>
+    <script>
+        var rootElement = document.documentElement;
+        rootElement.style.setProperty('--fontColor', 'blue')
+    </script>
 </body>
 
 </html>
