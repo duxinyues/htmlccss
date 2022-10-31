@@ -20,7 +20,7 @@
         }
 
         .grid {
-            display:grid;
+            display: grid;
             border: 1px solid red;
             grid-template-columns: 1fr 1fr 1fr;
             grid-template-rows: 1fr 1fr;
@@ -28,7 +28,7 @@
         }
 
         .grid>* {
-            width: 100px;
+            /* width: 100px; */
             height: 20px;
             background-color: darkkhaki;
             text-align: center;
@@ -39,13 +39,22 @@
 
 <body>
     <div class="grid">
-        <div class="item">1</div>
+        <!-- <div class="item">1</div>
         <div class="item">2</div>
         <div class="item">3</div>
         <div class="item">4</div>
         <div class="item">5</div>
-        <div class="item">6</div>
+        <div class="item">6</div> -->
     </div>
+
+    <script>
+        const grid = document.querySelector("grid");
+        const arr = [21, 2, 3, 4, 2, 23, 2, 54, 657, 23, 5, 34, 23, 42]
+        arr.forEach(item => {
+            grid.innerHTML = `<div class="item">${item}</div>`
+        })
+
+    </script>
 </body>
 
 </html>

@@ -43,8 +43,8 @@
         }
 
         main::after {
-            content: "";
             display: block;
+            content: "";
             clear: both;
         }
 
@@ -54,30 +54,9 @@
 
         }
 
-        .content div {
-            width: 100px;
-            height: 50px;
-
-        }
-
-        .content div:nth-child(1) {
-            border: 1px solid blue;
-
-        }
-
-        .content div:nth-child(2) {
-            border: 1px solid pink;
-            float: left;
-        }
-
-        .content div:nth-child(2)::after {
-            content: "";
+        .clear {
             clear: both;
-            display: block;
-        }
-
-        .content div:nth-child(3) {
-            border: 1px solid yellowgreen;
+            border: 1px solid red;
         }
     </style>
 </head>
@@ -89,15 +68,12 @@
         <div class="item">3</div>
         <div class="item">4</div>
     </main>
-    
-    这个是辅导费不放过发货那么能吃v吧
-    <div style="clear: both;"></div>
 
-    <div class="content">
-        <div></div>
-        <div></div>
-        <div></div>
-    </div>
+    这种布局常用于将网页内容居中。通过将内容放置到两个嵌套的容器中，然后给内层的容器设置外边距，让它在外层容器中居中（如图4-5所示）。Web开发人员Brad Westfall把这种布局方式叫作双容器模式（double
+    container pattern）。
+
+    <div class="clear"></div>
+    <div class="content">content </div>
 </body>
 
 </html>
