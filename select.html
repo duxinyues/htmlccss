@@ -1,0 +1,48 @@
+<!--
+ * @Author: duxinyues yongyuan253015@gmail.com
+ * @Date: 2022-11-11 13:25:29
+ * @LastEditors: duxinyues yongyuan253015@gmail.com
+ * @LastEditTime: 2022-11-11 14:49:32
+ * @FilePath: \htmlccss\select.html
+ * @Description: 
+ * Copyright (c) 2022 by duxinyues email: yongyuan253015@gmail.com, All Rights Reserved.
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select</title>
+</head>
+
+<body>
+    <select type="" name="location" id="selLocation">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+    </select>
+
+    <script>
+        let selectBox = document.getElementById("selLocation");
+
+        function getSelectedOptions(selectBox) {
+            let result = new Array();
+            for (let option of selectBox.options) {
+                if (option.selected) {
+                    result.push(option)
+                }
+            }
+
+            return result;
+        }
+
+        let selectedOptions = getSelectedOptions(selectBox);
+        console.log("text",selectedOptions)
+    </script>
+</body>
+
+</html>
